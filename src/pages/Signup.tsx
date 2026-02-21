@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,7 +12,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const handleSignup = async (e: React.FormEvent) => {
@@ -36,32 +36,10 @@ const Signup = () => {
     if (error) {
       toast({ title: 'Signup failed', description: error.message, variant: 'destructive' });
     } else {
-      setSent(true);
+      toast({ title: 'Account created!', description: 'You can now sign in.' });
+      navigate('/login');
     }
   };
-
-  if (sent) {
-    return (
-      <div className="min-h-screen bg-[hsl(200,25%,8%)] flex items-center justify-center px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(180,30%,12%)] via-[hsl(200,25%,8%)] to-[hsl(200,25%,6%)]" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[hsl(170,60%,40%)] rounded-full blur-[150px] opacity-10" />
-        <div className="relative z-10 text-center max-w-md">
-          <div className="bg-[hsl(200,20%,12%)] border border-[hsl(200,15%,20%)] rounded-2xl p-10">
-            <Mail className="w-16 h-16 text-[hsl(170,60%,50%)] mx-auto mb-4" />
-            <h2 className="text-2xl font-display font-bold text-[hsl(180,20%,95%)] mb-3">Check Your Email</h2>
-            <p className="text-[hsl(200,10%,50%)] mb-6">
-              We've sent a verification link to <strong className="text-[hsl(170,60%,50%)]">{email}</strong>. Click the link to verify your account.
-            </p>
-            <Link to="/login">
-              <Button variant="outline" className="border-[hsl(200,15%,25%)] bg-[hsl(200,20%,12%)] text-[hsl(180,20%,90%)] hover:bg-[hsl(200,20%,16%)]">
-                Back to Login
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[hsl(200,25%,8%)] flex items-center justify-center px-6 relative overflow-hidden">
