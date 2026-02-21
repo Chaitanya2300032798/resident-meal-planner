@@ -1,22 +1,21 @@
 import { useState } from 'react';
-import { Search, AlertCircle, Heart, User } from 'lucide-react';
+import { Search, Plus, AlertCircle, Heart, User } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
-import { residents as defaultResidents, Resident } from '@/data/mockData';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { residents } from '@/data/mockData';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
-import AddResidentDialog from '@/components/AddResidentDialog';
 
 const Residents = () => {
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
-  const [residentList, setResidentList] = useState<Resident[]>(defaultResidents);
 
-  const filtered = residentList.filter(r =>
+  const filtered = residents.filter(r =>
     r.name.toLowerCase().includes(search.toLowerCase()) ||
     r.room.toLowerCase().includes(search.toLowerCase())
   );
 
-  const selectedResident = residentList.find(r => r.id === selected);
+  const selectedResident = residents.find(r => r.id === selected);
 
   return (
     <div>
@@ -30,7 +29,6 @@ const Residents = () => {
             className="pl-10 w-64"
           />
         </div>
-        <AddResidentDialog onAdd={(r) => setResidentList(prev => [...prev, r])} />
       </PageHeader>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

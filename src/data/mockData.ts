@@ -28,8 +28,6 @@ export interface Meal {
   items: string[];
   calories: number;
   tags: string[];
-  prepSummary: string;
-  youtubeUrl: string;
 }
 
 export interface MealPlan {
@@ -101,14 +99,14 @@ export const inventory: FoodItem[] = [
 ];
 
 export const sampleMeals: Meal[] = [
-  { id: '1', name: 'Herb Grilled Chicken', type: 'lunch', items: ['Chicken Breast', 'Brown Rice', 'Broccoli'], calories: 436, tags: ['High protein', 'Gluten free'], prepSummary: 'Season chicken with herbs, grill for 6-7 min per side. Cook brown rice per package. Steam broccoli until tender-crisp. Plate together and serve warm.', youtubeUrl: 'https://www.youtube.com/watch?v=xRPjKQtRXR8' },
-  { id: '2', name: 'Oatmeal & Fresh Fruit', type: 'breakfast', items: ['Oatmeal', 'Apples', 'Bananas'], calories: 350, tags: ['Fiber rich', 'Warm'], prepSummary: 'Cook oatmeal with water or milk for 5 min. Dice apples and slice bananas. Top oatmeal with fresh fruit, drizzle with honey if desired.', youtubeUrl: 'https://www.youtube.com/watch?v=gM7LMfR-GCQ' },
-  { id: '3', name: 'Salmon with Sweet Potato', type: 'dinner', items: ['Salmon Fillet', 'Sweet Potatoes', 'Spinach'], calories: 480, tags: ['Heart healthy', 'Omega 3'], prepSummary: 'Bake salmon at 400°F for 12-15 min. Roast cubed sweet potatoes for 25 min. Sauté spinach with garlic. Plate and garnish with lemon.', youtubeUrl: 'https://www.youtube.com/watch?v=da2GGTP6rFE' },
-  { id: '4', name: 'Greek Yogurt Parfait', type: 'snack', items: ['Greek Yogurt', 'Apples'], calories: 195, tags: ['Light', 'Calcium'], prepSummary: 'Layer Greek yogurt in a glass. Dice apples and add between layers. Top with a sprinkle of cinnamon or granola. Serve chilled.', youtubeUrl: 'https://www.youtube.com/watch?v=kbuKsdGEMzM' },
-  { id: '5', name: 'Turkey & Veggie Wrap', type: 'lunch', items: ['Ground Turkey', 'Tomatoes', 'Spinach'], calories: 380, tags: ['Lean protein'], prepSummary: 'Cook ground turkey with seasoning until browned. Dice tomatoes, wash spinach. Fill tortilla with turkey, veggies, and desired sauce. Roll tightly.', youtubeUrl: 'https://www.youtube.com/watch?v=Ug7CPMwVFTQ' },
-  { id: '6', name: 'Scrambled Eggs & Toast', type: 'breakfast', items: ['Eggs', 'Whole Wheat Bread'], calories: 290, tags: ['Classic', 'Quick'], prepSummary: 'Whisk eggs with a splash of milk, salt, and pepper. Scramble on medium heat until just set. Toast whole wheat bread. Serve together with butter.', youtubeUrl: 'https://www.youtube.com/watch?v=PUP7U5vTMM0' },
-  { id: '7', name: 'Pasta Primavera', type: 'dinner', items: ['Pasta', 'Broccoli', 'Tomatoes'], calories: 410, tags: ['Vegetarian'], prepSummary: 'Cook pasta al dente. Sauté broccoli florets and diced tomatoes in olive oil with garlic. Toss pasta with veggies, season with herbs and parmesan.', youtubeUrl: 'https://www.youtube.com/watch?v=UQ00cSMJhjE' },
-  { id: '8', name: 'Fresh Fruit Bowl', type: 'snack', items: ['Apples', 'Bananas'], calories: 200, tags: ['Fresh', 'Natural'], prepSummary: 'Wash and slice apples into wedges. Peel and slice bananas. Arrange in a bowl. Optionally drizzle with honey or a squeeze of lime juice.', youtubeUrl: 'https://www.youtube.com/watch?v=FLd00Bx4tOk' },
+  { id: '1', name: 'Herb Grilled Chicken', type: 'lunch', items: ['Chicken Breast', 'Brown Rice', 'Broccoli'], calories: 436, tags: ['High protein', 'Gluten free'] },
+  { id: '2', name: 'Oatmeal & Fresh Fruit', type: 'breakfast', items: ['Oatmeal', 'Apples', 'Bananas'], calories: 350, tags: ['Fiber rich', 'Warm'] },
+  { id: '3', name: 'Salmon with Sweet Potato', type: 'dinner', items: ['Salmon Fillet', 'Sweet Potatoes', 'Spinach'], calories: 480, tags: ['Heart healthy', 'Omega 3'] },
+  { id: '4', name: 'Greek Yogurt Parfait', type: 'snack', items: ['Greek Yogurt', 'Apples'], calories: 195, tags: ['Light', 'Calcium'] },
+  { id: '5', name: 'Turkey & Veggie Wrap', type: 'lunch', items: ['Ground Turkey', 'Tomatoes', 'Spinach'], calories: 380, tags: ['Lean protein'] },
+  { id: '6', name: 'Scrambled Eggs & Toast', type: 'breakfast', items: ['Eggs', 'Whole Wheat Bread'], calories: 290, tags: ['Classic', 'Quick'] },
+  { id: '7', name: 'Pasta Primavera', type: 'dinner', items: ['Pasta', 'Broccoli', 'Tomatoes'], calories: 410, tags: ['Vegetarian'] },
+  { id: '8', name: 'Fresh Fruit Bowl', type: 'snack', items: ['Apples', 'Bananas'], calories: 200, tags: ['Fresh', 'Natural'] },
 ];
 
 export const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
